@@ -22,12 +22,13 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Helm Deployment
+                  name: hello-world
                   identifier: helmDeployment
                   type: HelmDeploy
                   timeout: 10m
                   spec:
                     skipDryRun: false
+                    ignoreReleaseHistFailStatus: false
             rollbackSteps:
               - step:
                   name: Helm Rollback
